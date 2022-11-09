@@ -12,7 +12,7 @@ app.get("/", (req, res) => {
 const PORT = process.env.PORT || 3000;
 io.on("connection", (socket) => {
   console.log("User Connected");
-  socket.on("driver", (receivedLocation) => {
+  socket.on("truck", (receivedLocation) => {
     console.log(receivedLocation);
     io.emit("user", receivedLocation);
   });
